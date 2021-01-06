@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import com.fullpagedeveloper.submission3githubusers.R
-import com.fullpagedeveloper.submission3githubusers.utils.ReminderUser
+import com.fullpagedeveloper.submission3githubusers.utils.Reminder
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     private lateinit var reminderPreference: SwitchPreferenceCompat
-    private lateinit var reminderUser: ReminderUser
+    private lateinit var reminderUser: Reminder
     private lateinit var reminder: String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings_preference, rootKey)
 
-        reminderUser = ReminderUser()
+        reminderUser = Reminder()
 
         initReminder()
         initSharedPreference()

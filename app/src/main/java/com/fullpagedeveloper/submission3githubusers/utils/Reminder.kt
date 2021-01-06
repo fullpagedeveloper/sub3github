@@ -6,14 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
-import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.fullpagedeveloper.submission3githubusers.R
 import com.fullpagedeveloper.submission3githubusers.ui.MainActivity
 import java.util.*
 
-class ReminderUser: BroadcastReceiver() {
+class Reminder: BroadcastReceiver() {
     companion object{
         private const val REMINDER_CODE = 101
     }
@@ -65,7 +64,7 @@ class ReminderUser: BroadcastReceiver() {
     fun setRepeatingReminder(context: Context?){
         val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        val intent: PendingIntent = Intent(context, ReminderUser::class.java).let {
+        val intent: PendingIntent = Intent(context, Reminder::class.java).let {
             PendingIntent.getBroadcast(context, REMINDER_CODE, it, 0)
         }
 
@@ -83,7 +82,7 @@ class ReminderUser: BroadcastReceiver() {
 
     fun cancelAlarm(context: Context?){
         val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(context, ReminderUser::class.java)
+        val intent = Intent(context, Reminder::class.java)
         val pendingIntent = PendingIntent.getBroadcast(context, REMINDER_CODE, intent, 0)
         pendingIntent.cancel()
 

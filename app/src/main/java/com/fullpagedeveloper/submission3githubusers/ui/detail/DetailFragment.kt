@@ -19,7 +19,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class DetailFragment : Fragment() {
 
     private lateinit var detailBinding: DetailFragmentBinding
-    private lateinit var pagerAdapter: PagerAdapter
+    private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var detailViewModel: DetailViewModel
     private lateinit var githubUser: GithubUser
     private val args: DetailFragmentArgs by navArgs()
@@ -50,8 +50,8 @@ class DetailFragment : Fragment() {
             resources.getString(R.string.followers),
             resources.getString(R.string.following)
         )
-        pagerAdapter = PagerAdapter(tabList, args.Username, this)
-        detailBinding.pager.adapter = pagerAdapter
+        viewPagerAdapter = ViewPagerAdapter(tabList, args.Username, this)
+        detailBinding.pager.adapter = viewPagerAdapter
 
         TabLayoutMediator(detailBinding.tabs, detailBinding.pager) { tab, position ->
             tab.text = tabList[position]
@@ -88,7 +88,7 @@ class DetailFragment : Fragment() {
         }
     }
 
-    inner class PagerAdapter(
+    inner class ViewPagerAdapter(
         private val tabList: Array<String>,
         private val username: String,
         fragment: Fragment

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Submission3GithubUsers</string>
+    <string name="exp_location">Lokai</string>
+    <string name="exp_name">Nama</string>
+    <string name="exp_login">Login</string>
+    <string name="location_not_found">Lokasi Tidak Ditemukan :(</string>
+    <string name="reminder_message">Favorit sekarang</string>
+    <string name="reminder_key">Pengingat</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="search_hint">Cari semua pengguna</string>
+    <string name="not_found">User tidak di temukan</string>
+    <string name="language">Bahasa</string>
+    <string name="change_language">Merubah bahasa</string>
+    <string name="reminder">Pengingat harian</string>
+    <string name="reminder_on">Pengingat Harian Aktif</string>
+    <string name="reminder_off">Pengingat Harian Tidak Aktif</string>
+    <string name="reminder_title">Pengguna Github Menunggu Anda</string>
+</resources>
